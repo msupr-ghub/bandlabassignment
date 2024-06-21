@@ -48,13 +48,6 @@ public class ApiController {
 
     }
 
-
-    private boolean isSupportedImageType(String name) {
-        String imageType = name.substring(name.lastIndexOf(".")+1).toLowerCase();
-        return imageType.equalsIgnoreCase("jpg") || imageType.equals("jpeg") || imageType.equals("png") || imageType.equals("bmp");
-
-    }
-
     @GetMapping("")
     public List<Post> getPosts(@RequestParam(value = "start", required = false) Long start, @RequestParam(value = "pageSize",required = false) Integer pageSize) {
         if (start == null) {
@@ -113,6 +106,12 @@ public class ApiController {
         }
         postService.deleteComment(commentId);
         return GenericApiResponse.<String>builder().message("Comment deleted successfully").build();
+    }
+
+    private boolean isSupportedImageType(String name) {
+        String imageType = name.substring(name.lastIndexOf(".")+1).toLowerCase();
+        return imageType.equalsIgnoreCase("jpg") || imageType.equals("jpeg") || imageType.equals("png") || imageType.equals("bmp");
+
     }
 
 
