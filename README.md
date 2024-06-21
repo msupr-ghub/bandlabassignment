@@ -27,9 +27,10 @@ APIs can be accessed at:
 http://localhost:8080/swagger-ui/index.html 
 
 ## Running with Docker
-App can be deployed as docker container
+App can be deployed as a docker container
 
 First build an executable jar file using the following command:
+
 reminder: make sure you have java 18 (openjdk) installed on your machine
 as we use that as docker java runtime , mismatch in java version can cause app startup failure.
 
