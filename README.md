@@ -19,9 +19,12 @@ to run the app , execute this command from app root directory:
 
 Once started, app can be accessed at: 
 
-`localhost:8080/api/v1/posts/1/comments`
+`http://localhost:8080`
 
 Please ensure no other service is running on port 8080. 
+
+APIs can be accessed at:
+http://localhost:8080/swagger-ui/index.html 
 
 
 
