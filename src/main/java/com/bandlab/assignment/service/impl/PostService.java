@@ -9,6 +9,7 @@ import com.bandlab.assignment.repository.PostRepository;
 import com.bandlab.assignment.service.StorageService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -38,7 +39,8 @@ public class PostService {
     }
 
     public List<Post> getPosts(Long start, Integer pageSize) {
-        return postRepository.getPosts(start);
+        Pageable pageable = Pageable.ofSize(pageSize);
+        return postRepository.getPosts(start, pageable);
     }
 
     public Post createPost(CreatePostRequest createPostRequest, MultipartFile imageFile) throws IOException {
